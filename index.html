@@ -23,7 +23,6 @@
         var lastLineTime = Date.now();
         var lineSpeed = 10; // speed of the line
         var stripeHeight = 2; // height of the stripes
-        var brightness = 0; // added brightness variable
 
         function resize() {
             canvas.width = window.innerWidth;
@@ -57,7 +56,6 @@
                 linePos = (linePos + lineSpeed) % canvas.height;
                 if (linePos < lineSpeed) {
                     lastLineTime = Date.now();
-                    brightness = 0.5; // set brightness to a higher value when line passes
                 }
             }
 
@@ -65,16 +63,11 @@
 
             // Add vignette
             ctx.globalCompositeOperation = 'source-over';
-            var gradient = ctx.createRadialGradient(w / 2, h / 2, 0, w / 2, h / 2, Math.sqrt(w * w + h * h) / 2);
-            gradient.addColorStop(0, 'rgba(0, 0, 0, ' + brightness + ')'); // make the page lighter when line passes
-            gradient.addColorStop(1, 'rgba(0, 0, 0, ' + (0.5 + brightness / 2) + ')'); // make the page darker overall
+            var gradient = ctx.createLinearGradient(0, linePos, 0, 0); // create a linear gradient from the line position to the top of the canvas
+            gradient.addColorStop(0, 'rgba(0, 0, 0, 0.5)'); // make the area just behind the line brighter
+            gradient.addColorStop(1, 'rgba(0, 0, 0, 0)'); // make the top of the page darker
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, w, h);
-
-            // Gradually return to normal brightness
-            if (brightness > 0) {
-                brightness -= 0.01;
-            }
         }
 
         function loop() {
