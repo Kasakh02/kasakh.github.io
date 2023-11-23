@@ -6,33 +6,13 @@
     <title>Welcome Page</title>
     <style>
         body {
-            background-color: #001f00; /* Dark green background */
-            color: #00ff00; /* Bright green text */
-            font-family: 'Courier New', monospace; /* Monospace font for a coding vibe */
+            background-color: #00ff00; /* Bright green background */
             margin: 0;
             padding: 0;
             overflow: hidden;
         }
 
-        header {
-            text-align: center;
-            padding: 50px;
-        }
-
-        section {
-            margin: 20px;
-            padding: 20px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 10px;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        /* Animation for the interference effect */
+        /* Animation for the dynamic line effect */
         body::before {
             content: '';
             position: fixed;
@@ -40,17 +20,19 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, transparent 95%, #003300 95.5%, transparent 96%);
+            background: linear-gradient(to bottom, rgba(0, 255, 0, 0.2) 0%, rgba(0, 255, 0, 1) 50%, rgba(0, 255, 0, 0.2) 100%);
             z-index: -1;
             pointer-events: none;
-            animation: interference 5s infinite linear;
+            animation: dynamicLine 5s infinite linear;
         }
 
-        @keyframes interference {
+        @keyframes dynamicLine {
             to {
                 transform: translateX(100%);
             }
         }
     </style>
 </head>
+<body>
+</body>
 </html>
