@@ -7,36 +7,20 @@
     body {
       margin: 0;
       overflow: hidden;
-      background: #000; /* Set background color to black */
+      background: url('grainy-texture.png'); /* Replace 'grainy-texture.png' with your grainy texture image */
+      font-family: 'Arial', sans-serif; /* Choose a suitable font for the text */
+      color: #fff; /* Set text color to white */
+      text-align: center;
+      line-height: 100vh;
     }
 
-    .tv-screen {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 80%;
-      height: 60vh;
-      background: url('static-overlay.png'); /* Replace 'static-overlay.png' with your static image */
-      background-size: cover;
-      z-index: 1;
-    }
-
-    .tv-frame {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 85%;
-      height: 65vh;
-      border: 20px solid #333; /* Set border color to a dark gray */
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
-      z-index: 0;
+    h1 {
+      font-size: 3em;
+      margin: 0;
     }
   </style>
 </head>
 <body>
-  <div class="tv-frame"></div>
-  <div class="tv-screen"></div>
+  <h1>Your Content Goes Here</h1>
 </body>
 </html>
