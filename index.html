@@ -31,7 +31,12 @@
             var len = buffer32.length;
 
             for (var i = 0; i < len; i++) {
-                var color = Math.random() < 0.5 ? 0xff66cc00 : 0xff99ff33; // light green and less light green
+                var color;
+                if (Math.floor(i / w) % 2 === 0) {
+                    color = 0xff558800; // darker green
+                } else {
+                    color = 0xff88aa22; // lighter green
+                }
                 buffer32[i] = color;
             }
 
