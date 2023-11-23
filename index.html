@@ -33,14 +33,22 @@
             for (var i = 0; i < len; i++) {
                 var color;
                 if (Math.floor(i / w) % 2 === 0) {
-                    color = 0xff558800; // darker green
+                    color = Math.random() < 0.5 ? 0xff003300 : 0xff006600; // hacker green stripes
                 } else {
-                    color = 0xff88aa22; // lighter green
+                    color = Math.random() < 0.5 ? 0xff003300 : 0xff006600; // hacker green noise
                 }
                 buffer32[i] = color;
             }
 
             ctx.putImageData(idata, 0, 0);
+
+            // Add vignette
+            ctx.globalCompositeOperation = 'source-over';
+            var gradient = ctx.createRadialGradient(w / 2, h / 2, 0, w / 2, h / 2, Math.sqrt(w * w + h * h) / 2);
+            gradient.addColorStop(0, 'rgba(0, 0, 0, 0)');
+            gradient.addColorStop(1, 'rgba(0, 0, 0, 0.5)');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, w, h);
         }
 
         function loop() {
