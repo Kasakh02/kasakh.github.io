@@ -1,51 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    body {
-      margin: 0;
-      overflow: hidden;
-      background: #000; /* Set background color to black */
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Static</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-color: black;
+        }
 
-    .static-noise {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
-      background-size: 1px 1px, 10px 10px; /* Set the size of the noise pattern */
-      background-image: 
-        linear-gradient(to right, white 1px, transparent 1px),
-        linear-gradient(to bottom, white 1px, transparent 1px),
-        url('static-noise.png'); /* Replace 'static-noise.png' with your static noise image */
-      animation: noise 3s infinite linear;
-    }
+        .static-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+        }
 
-    @keyframes noise {
-      0%, 20%, 40%, 60%, 80%, 100% {
-        transform: translate(0, 0);
-      }
-      20% {
-        transform: translate(-5%, -5%);
-      }
-      40% {
-        transform: translate(5%, 5%);
-      }
-      60% {
-        transform: translate(-5%, -5%);
-      }
-      80% {
-        transform: translate(5%, 5%);
-      }
-    }
-  </style>
+        .static {
+            background: url('static.png'); /* Replace 'static.png' with your noise texture */
+            width: 100%;
+            height: 100%;
+            animation: static-animation 5s infinite linear;
+        }
+
+        @keyframes static-animation {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(1px, 1px);
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="static-noise"></div>
-  <!-- Your content goes here -->
+    <div class="static-overlay">
+        <div class="static"></div>
+    </div>
+    <!-- Your content goes here -->
 </body>
 </html>
