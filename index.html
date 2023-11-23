@@ -7,20 +7,45 @@
     body {
       margin: 0;
       overflow: hidden;
-      background: url('grainy-texture.png'); /* Replace 'grainy-texture.png' with your grainy texture image */
-      font-family: 'Arial', sans-serif; /* Choose a suitable font for the text */
-      color: #fff; /* Set text color to white */
-      text-align: center;
-      line-height: 100vh;
+      background: #000; /* Set background color to black */
     }
 
-    h1 {
-      font-size: 3em;
-      margin: 0;
+    .static-noise {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      background-size: 1px 1px, 10px 10px; /* Set the size of the noise pattern */
+      background-image: 
+        linear-gradient(to right, white 1px, transparent 1px),
+        linear-gradient(to bottom, white 1px, transparent 1px),
+        url('static-noise.png'); /* Replace 'static-noise.png' with your static noise image */
+      animation: noise 3s infinite linear;
+    }
+
+    @keyframes noise {
+      0%, 20%, 40%, 60%, 80%, 100% {
+        transform: translate(0, 0);
+      }
+      20% {
+        transform: translate(-5%, -5%);
+      }
+      40% {
+        transform: translate(5%, 5%);
+      }
+      60% {
+        transform: translate(-5%, -5%);
+      }
+      80% {
+        transform: translate(5%, 5%);
+      }
     }
   </style>
 </head>
 <body>
-  <h1>Your Content Goes Here</h1>
+  <div class="static-noise"></div>
+  <!-- Your content goes here -->
 </body>
 </html>
