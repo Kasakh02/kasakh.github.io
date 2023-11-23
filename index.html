@@ -17,6 +17,7 @@
     <script>
         var canvas = document.getElementById('canvas');
         var ctx = canvas.getContext('2d');
+        var linePos = 0;
 
         function resize() {
             canvas.width = window.innerWidth;
@@ -40,6 +41,11 @@
                 buffer32[i] = color;
             }
 
+            // Add bright line
+            for (var i = linePos * w; i < (linePos + 1) * w; i++) {
+                buffer32[i] = 0xff00ff00; // bright green
+            }
+
             ctx.putImageData(idata, 0, 0);
 
             // Add vignette
@@ -53,6 +59,7 @@
 
         function loop() {
             draw();
+            linePos = (linePos + 1) % canvas.height;
             requestAnimationFrame(loop);
         }
 
