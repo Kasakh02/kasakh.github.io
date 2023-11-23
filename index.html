@@ -22,6 +22,7 @@
         var linePause = 2000; // pause time in milliseconds
         var lastLineTime = Date.now();
         var lineSpeed = 5; // speed of the line
+        var stripeHeight = 10; // height of the stripes
 
         function resize() {
             canvas.width = window.innerWidth;
@@ -37,10 +38,10 @@
 
             for (var i = 0; i < len; i++) {
                 var color;
-                if (Math.floor(i / w) % 2 === 0) {
-                    color = Math.random() < 0.5 ? 0xff003300 : 0xff006600; // hacker green stripes
+                if (Math.floor(i / w) % (2 * stripeHeight) < stripeHeight) {
+                    color = Math.random() < 0.1 ? 0xff003300 : 0xff006600; // hacker green stripes
                 } else {
-                    color = Math.random() < 0.5 ? 0xff003300 : 0xff006600; // hacker green noise
+                    color = Math.random() < 0.1 ? 0xff003300 : 0xff009900; // hacker green noise
                 }
                 buffer32[i] = color;
             }
