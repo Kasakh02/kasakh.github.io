@@ -36,21 +36,14 @@
             var buffer32 = new Uint32Array(idata.data.buffer);
             var len = buffer32.length;
 
-            for (var y = 0; y < h; y++) {
-                for (var x = 0; x < w; x++) {
-                    var distanceToLine = Math.abs(y - linePos);
-
-                    var color;
-                    if (Math.floor(y / (2 * stripeHeight)) % stripeHeight < stripeHeight) {
-                        color = Math.random() < 0.1 ? 0xff003300 : 0xff006600; // hacker green stripes
-                    } else {
-                        // Adjust darkness only for the part behind the line
-                        var darkness = 0.5 + 0.5 * (1 - distanceToLine / h);
-                        color = Math.random() < 0.1 ? 0xff003300 : mixColors(0xff009900, 0xff00ff00, darkness); // hacker green noise
-                    }
-
-                    buffer32[y * w + x] = color;
+            for (var i = 0; i < len; i++) {
+                var color;
+                if (Math.floor(i / w) % (2 * stripeHeight) < stripeHeight) {
+                    color = Math.random() < 0.1 ? 0xff003300 : 0xff006600; // hacker green stripes
+                } else {
+                    color = Math.random() < 0.1 ? 0xff003300 : 0xff009900; // hacker green noise
                 }
+                buffer32[i] = color;
             }
 
             // Add bright line
@@ -60,29 +53,21 @@
                         buffer32[i] = 0xff00ff00; // bright green
                     }
                 }
-                linePos = (linePos + lineSpeed) % h;
+                linePos = (linePos + lineSpeed) % canvas.height;
                 if (linePos < lineSpeed) {
                     lastLineTime = Date.now();
                 }
             }
 
             ctx.putImageData(idata, 0, 0);
-        }
 
-        function mixColors(color1, color2, ratio) {
-            var r1 = (color1 >> 16) & 0xff;
-            var g1 = (color1 >> 8) & 0xff;
-            var b1 = color1 & 0xff;
-
-            var r2 = (color2 >> 16) & 0xff;
-            var g2 = (color2 >> 8) & 0xff;
-            var b2 = color2 & 0xff;
-
-            var r = Math.round(r1 + ratio * (r2 - r1));
-            var g = Math.round(g1 + ratio * (g2 - g1));
-            var b = Math.round(b1 + ratio * (b2 - b1));
-
-            return (r << 16) | (g << 8) | b;
+            // Add vignette
+            ctx.globalCompositeOperation = 'source-over';
+            var gradient = ctx.createRadialGradient(w/2, h/2, 0, w/2, h/2, Math.sqrt(w*w + h*h)); // create a radial gradient from the center of the canvas
+            gradient.addColorStop(0, 'rgba(0, 0, 0, 0)'); // make the center of the page brighter
+            gradient.addColorStop(1, 'rgba(0, 0, 0, 0.5)'); // make the edges of the page darker
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, w, h);
         }
 
         function loop() {
