@@ -21,6 +21,7 @@
         var lineThickness = 2; // thickness of the line
         var linePause = 2000; // pause time in milliseconds
         var lastLineTime = Date.now();
+        var lineSpeed = 5; // speed of the line
 
         function resize() {
             canvas.width = window.innerWidth;
@@ -51,8 +52,10 @@
                         buffer32[i] = 0xff00ff00; // bright green
                     }
                 }
-                linePos = (linePos + lineThickness) % canvas.height;
-                lastLineTime = Date.now();
+                linePos = (linePos + lineSpeed) % canvas.height;
+                if (linePos < lineSpeed) {
+                    lastLineTime = Date.now();
+                }
             }
 
             ctx.putImageData(idata, 0, 0);
