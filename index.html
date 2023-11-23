@@ -19,7 +19,7 @@
         var ctx = canvas.getContext('2d');
         var linePos = 0;
         var lineThickness = 4; // thickness of the line
-        var linePause = 2000; // pause time in milliseconds
+        var linePause = 4000; // pause time in milliseconds
         var lastLineTime = Date.now();
         var lineSpeed = 10; // speed of the line
         var stripeHeight = 2; // height of the stripes
@@ -63,9 +63,9 @@
 
             // Add vignette
             ctx.globalCompositeOperation = 'source-over';
-            var gradient = ctx.createRadialGradient(w/2, h/2, 0, w/2, h/2, Math.sqrt(w*w + h*h)); // create a radial gradient from the center of the canvas
-            gradient.addColorStop(0, 'rgba(0, 0, 0, 0)'); // make the center of the page brighter
-            gradient.addColorStop(1, 'rgba(0, 0, 0, 0.5)'); // make the edges of the page darker
+            var gradient = ctx.createLinearGradient(0, linePos, 0, h); // create a linear gradient from the line position to the bottom of the canvas
+            gradient.addColorStop(0, 'rgba(0, 0, 0, 0)'); // make the area just behind the line brighter
+            gradient.addColorStop(1, 'rgba(0, 0, 0, 0.5)'); // make the bottom of the page darker
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, w, h);
         }
