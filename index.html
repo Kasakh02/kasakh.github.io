@@ -18,6 +18,9 @@
         var canvas = document.getElementById('canvas');
         var ctx = canvas.getContext('2d');
         var linePos = 0;
+        var lineThickness = 2; // thickness of the line
+        var linePause = 2000; // pause time in milliseconds
+        var lastLineTime = Date.now();
 
         function resize() {
             canvas.width = window.innerWidth;
@@ -42,8 +45,14 @@
             }
 
             // Add bright line
-            for (var i = linePos * w; i < (linePos + 1) * w; i++) {
-                buffer32[i] = 0xff00ff00; // bright green
+            if (Date.now() - lastLineTime > linePause) {
+                for (var j = 0; j < lineThickness; j++) {
+                    for (var i = (linePos + j) * w; i < (linePos + j + 1) * w; i++) {
+                        buffer32[i] = 0xff00ff00; // bright green
+                    }
+                }
+                linePos = (linePos + lineThickness) % canvas.height;
+                lastLineTime = Date.now();
             }
 
             ctx.putImageData(idata, 0, 0);
@@ -59,7 +68,6 @@
 
         function loop() {
             draw();
-            linePos = (linePos + 1) % canvas.height;
             requestAnimationFrame(loop);
         }
 
