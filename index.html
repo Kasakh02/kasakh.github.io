@@ -1,47 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TV Static</title>
+    <title>Green Static Noise</title>
     <style>
         body {
             margin: 0;
             overflow: hidden;
-            background-color: black;
         }
-
-        .static-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9999;
-        }
-
-        .static {
-            background: url('static.png'); /* Replace 'static.png' with your noise texture */
-            width: 100%;
-            height: 100%;
-            animation: static-animation 5s infinite linear;
-        }
-
-        @keyframes static-animation {
-            0% {
-                transform: translate(0, 0);
-            }
-            100% {
-                transform: translate(1px, 1px);
-            }
+        canvas {
+            position: absolute;
         }
     </style>
 </head>
 <body>
-    <div class="static-overlay">
-        <div class="static"></div>
-    </div>
-    <!-- Your content goes here -->
+    <canvas id="canvas"></canvas>
+    <script>
+        var canvas = document.getElementById('canvas');
+        var ctx = canvas.getContext('2d');
+
+        function resize() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        function draw() {
+            var w = canvas.width;
+            var h = canvas.height;
+            var idata = ctx.createImageData(w, h);
+            var buffer32 = new Uint32Array(idata.data.buffer);
+            var len = buffer32.length;
+
+            for (var i = 0; i < len; i++) {
+                var color = Math.random() < 0.5 ? 0xff66cc00 : 0xff99ff33; // light green and less light green
+                buffer32[i] = color;
+            }
+
+            ctx.putImageData(idata, 0, 0);
+        }
+
+        function loop() {
+            draw();
+            requestAnimationFrame(loop);
+        }
+
+        resize();
+        loop();
+        window.onresize = resize;
+    </script>
 </body>
 </html>
