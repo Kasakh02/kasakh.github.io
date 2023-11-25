@@ -23,7 +23,10 @@
 	align-items: center;
 	display: flex;
 	cursor: pointer;
-  user-select: none;
+}
+
+#game * {
+    user-select: none;
 }
 
 .ripple {
