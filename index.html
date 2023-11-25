@@ -22,12 +22,16 @@
 					</select>
 					<button id="start-button" onclick="startGame()">Start Game</button>
 				</div>
-				<p id="countdown"></p>
 				<div id="game">
-					<p id="click-counter">0</p>
+					<p id="click-counter">Click Here!</p>
 					<p id="result"></p>
 				</div>
+				<p id="countdown"></p>
 			</div>
+		</div>
+		<div id="end-game-layer" style="display: none;">
+			<p id="end-game-message"></p>
+			<button onclick="closeEndGameLayer()">Close</button>
 		</div>
 		<script src="JS/script.js"></script>
 	</body>
