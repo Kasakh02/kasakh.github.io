@@ -13,21 +13,20 @@ function startGame() {
 			gameStarted = true;
 			gameDuration = document.getElementById('game-duration').value;
 			document.getElementById('countdown').innerText = gameDuration;
-			countdownInterval = setInterval(countdown, 1);
+			countdownInterval = setInterval(countdown, 10);
 			gameInterval = setTimeout(endGame, gameDuration * 1000);
 		}
 		incrementCounter();
 		createClickEffect(event);
 	};
-	document.getElementById('result').innerText = '';
-	document.getElementById('click-counter').style.display = 'block';
+	document.getElementById('click-counter').innerText = 'Your score: 0';
 }
 
 function countdown() {
 	let countdownElement = document.getElementById('countdown');
 	let timeLeft = parseFloat(countdownElement.innerText);
 	if (timeLeft > 0) {
-		countdownElement.innerText = (timeLeft - 0.001).toFixed(3);
+		countdownElement.innerText = (timeLeft - 0.01).toFixed(2);
 	} else {
 		clearInterval(countdownInterval);
 		endGame();
@@ -45,14 +44,16 @@ function endGame() {
 	clickCounter = 0;
 }
 
-function closeEndGameLayer() {
+function resetGame() {
 	document.getElementById('end-game-layer').style.display = 'none';
 	document.getElementById('start-button').style.display = 'block';
+	document.getElementById('click-counter').innerText = 'Click Here!';
+	document.getElementById('countdown').innerText = '';
 }
 
 function incrementCounter() {
 	clickCounter++;
-	document.getElementById('click-counter').innerText = clickCounter;
+	document.getElementById('click-counter').innerText = 'Your score: ' + clickCounter;
 }
 
 function createClickEffect(event) {
