@@ -119,3 +119,29 @@ body {
 canvas {
 	position: absolute;
 }
+
+.container {
+	width: 80%;
+	margin: auto;
+	text-align: center;
+}
+
+.contact-button {
+	margin: 10px;
+	padding: 10px;
+}
+
+#game-container {
+	margin-top: 50px;
+}
+
+#game {
+	width: 300px;
+	height: 300px;
+	margin: auto;
+	border: 1px solid black;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+}

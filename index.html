@@ -2,19 +2,23 @@
 <html>
 	<head>
 		<title>Kasakh</title>
-		<link rel="stylesheet" href="../CSS/index.css">
+		<link rel="stylesheet" href="../CSS/styles.css">
 		<link rel="icon" href="../Img/K.ico" type="image/x-icon">
 	</head>
 	<body>
-		<div class="noise"></div>
-		<div class="overlay"></div>
-		<div class="terminal">
-			<h1>Site under construction...</h1>
-			<p class="output">
-				While you wait why not check my 
-				<a href="https://www.instagram.com/hmoraes_photos">instagram page</a>
-				.
-			</p>
+		<div class="container">
+			<h1>My Portfolio</h1>
+			<p>This site is currently under construction. Please check back later!</p>
+			<h2>Contact Me</h2>
+			<button class="contact-button" onclick="window.location.href='mailto:your-email@example.com'">Email</button>
+			<button class="contact-button" onclick="window.location.href='tel:123-456-7890'">Phone</button>
+			<div id="game-container">
+				<button id="start-button" onclick="startGame()">Start Game</button>
+				<div id="game">
+					<p id="click-counter">0</p>
+				</div>
+			</div>
 		</div>
+		<script src="script.js"></script>
 	</body>
 </html>
