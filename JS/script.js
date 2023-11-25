@@ -12,7 +12,7 @@ function startGame() {
 		if (!gameStarted) {
 			gameStarted = true;
 			gameDuration = document.getElementById('game-duration').value;
-			document.getElementById('countdown').innerText = gameDuration;
+			document.getElementById('countdown').innerText = gameDuration + '.000';
 			countdownInterval = setInterval(countdown, 10);
 			gameInterval = setTimeout(endGame, gameDuration * 1000);
 		}
@@ -26,7 +26,7 @@ function countdown() {
 	let countdownElement = document.getElementById('countdown');
 	let timeLeft = parseFloat(countdownElement.innerText);
 	if (timeLeft > 0) {
-		countdownElement.innerText = (timeLeft - 0.01).toFixed(2);
+		countdownElement.innerText = (timeLeft - 0.01).toFixed(3);
 	} else {
 		clearInterval(countdownInterval);
 		endGame();
