@@ -13,18 +13,18 @@
 			<button class="contact-button" onclick="window.location.href='mailto:henriquecvcmoraes@gmail.com'">Email</button>
 			<button class="contact-button" onclick="window.location.href='https://www.instagram.com/hmoraes_projects'">Instagram</button>
 			<div id="game-container">
-				<button id="start-button" onclick="startGame()">Start Game</button>
+				<div class="game-controls">
+					<select id="game-duration">
+						<option value="10">10s</option>
+						<option value="30">30s</option>
+						<option value="60">1min</option>
+						<option value="300">5mins</option>
+					</select>
+					<button id="start-button" onclick="startGame()">Start Game</button>
+				</div>
+				<p id="countdown"></p>
 				<div id="game">
-					<div class="game-controls">
-						<select id="game-duration">
-							<option value="10">10s</option>
-							<option value="30">30s</option>
-							<option value="60">1min</option>
-							<option value="300">5mins</option>
-						</select>
-						<button id="start-button" onclick="startGame()">Start Game</button>
-					</div>
-					<p id="countdown"></p>								
+					<p id="click-counter">0</p>
 				</div>
 			</div>
 		</div>

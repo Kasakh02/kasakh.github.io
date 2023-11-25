@@ -33,12 +33,6 @@ function endGame() {
 	alert(`You made ${clickCounter} clicks in ${gameDuration} seconds. That's ${cps.toFixed(2)} clicks per second!`);
 }
 
-function changeColor() {
-	const game = document.getElementById('game');
-	let color = '#'+(Math.random()*0xFFFFFF<<0).toString(16);
-	game.style.backgroundColor = color;
-}
-
 function incrementCounter() {
 	clickCounter++;
 	document.getElementById('click-counter').innerText = clickCounter;
