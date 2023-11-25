@@ -6,6 +6,7 @@ let gameStarted = false;
 
 function startGame() {
 	document.getElementById('start-button').style.display = 'none';
+	document.getElementById('game-duration').style.display = 'none';
 	const game = document.getElementById('game');
 	game.style.display = 'flex';
 	game.onclick = function(event) {
@@ -48,6 +49,7 @@ function endGame() {
 function resetGame() {
 	document.getElementById('end-game-layer').style.display = 'none';
 	document.getElementById('start-button').style.display = 'block';
+	document.getElementById('game-duration').style.display = 'block';
 	document.getElementById('click-here').innerText = 'Click Here!';
 	document.getElementById('countdown').innerText = '';
 }
