@@ -15,13 +15,16 @@
 			<div id="game-container">
 				<button id="start-button" onclick="startGame()">Start Game</button>
 				<div id="game">
-					<select id="game-duration">
-						<option value="10">10s</option>
-						<option value="30">30s</option>
-						<option value="60">1min</option>
-						<option value="300">5mins</option>
-					</select>
-					<p id="countdown"></p>					
+					<div class="game-controls">
+						<select id="game-duration">
+							<option value="10">10s</option>
+							<option value="30">30s</option>
+							<option value="60">1min</option>
+							<option value="300">5mins</option>
+						</select>
+						<button id="start-button" onclick="startGame()">Start Game</button>
+					</div>
+					<p id="countdown"></p>								
 				</div>
 			</div>
 		</div>
