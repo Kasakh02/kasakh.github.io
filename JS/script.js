@@ -2,16 +2,22 @@ let gameInterval;
 let clickCounter = 0;
 let countdownInterval;
 let gameDuration;
+let gameStarted = false;
 
 function startGame() {
 	document.getElementById('start-button').style.display = 'none';
 	const game = document.getElementById('game');
 	game.style.display = 'flex';
-	game.onclick = incrementCounter;
-	gameDuration = document.getElementById('game-duration').value;
-	document.getElementById('countdown').innerText = gameDuration;
-	countdownInterval = setInterval(countdown, 1000);
-	gameInterval = setTimeout(endGame, gameDuration * 1000);
+	game.onclick = function() {
+		if (!gameStarted) {
+			gameStarted = true;
+			gameDuration = document.getElementById('game-duration').value;
+			document.getElementById('countdown').innerText = gameDuration;
+			countdownInterval = setInterval(countdown, 1000);
+			gameInterval = setTimeout(endGame, gameDuration * 1000);
+		}
+		incrementCounter();
+	};
 }
 
 function countdown() {
@@ -30,7 +36,10 @@ function endGame() {
 	game.onclick = null;
 	clearInterval(gameInterval);
 	let cps = clickCounter / gameDuration;
-	alert(`You made ${clickCounter} clicks in ${gameDuration} seconds. That's ${cps.toFixed(2)} clicks per second!`);
+	document.getElementById('result').innerText = `You made ${clickCounter} clicks in ${gameDuration} seconds. That's ${cps.toFixed(2)} clicks per second!`;
+	document.getElementById('start-button').style.display = 'block';
+	gameStarted = false;
+	clickCounter = 0;
 }
 
 function incrementCounter() {
