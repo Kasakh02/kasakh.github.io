@@ -7,34 +7,17 @@
 	</head>
 	<body>
 		<div class="container">
-			<h1>My Portfolio</h1>
-			<p>Coming soon...</p>
-			<h2>Contact Me</h2>
-			<button class="contact-button" onclick="window.location.href='mailto:henriquecvcmoraes@gmail.com'">Email</button>
-			<button class="contact-button" onclick="window.location.href='https://www.instagram.com/hmoraes_projects'">Instagram</button>
-			<div id="game-container">
-				<p id="score-display" style="display: none;">Your score: 0</p>
-				<div class="game-controls">
-					<select id="game-duration">
-						<option value="10">10s</option>
-						<option value="30">30s</option>
-						<option value="60">1min</option>
-						<option value="300">5mins</option>
-					</select>
-					<button id="start-button" onclick="startGame()">Start Game</button>
-				</div>
-				<div id="game" onclick="createRipple(event)">
-					<p id="click-here">Click Here!</p>
-				</div>
-				<p id="countdown"></p>
+			<h1>UNDER CONSTRUCTION</h1>
+			<h2>Site nearly ready</h2>
+			<div class="progress-bar">
+					<div class="filler" style="width: 70%"></div>
+			</div>
+			<button class="game-button" onclick="window.location.href='HTML/game.html'">Click Game</button>
+			<div class="social-links">
+				<a href="https://www.linkedin.com/in/henrique_v_moraes" target="_blank">LinkedIn</a>
+				<a href="https://www.instagram.com/hmoraes_photos" target="_blank">Instagram</a>
+				<a href="mailto:henriquecvcmoraes@gmail.com">Email</a>
 			</div>
 		</div>
-		<div id="end-game-layer">
-			<div id="popup">
-					<p id="end-game-message"></p>
-					<button id="close-button" onclick="resetGame()">X</button>
-			</div>
-		</div>
-		<script src="JS/script.js"></script>
 	</body>
 </html>

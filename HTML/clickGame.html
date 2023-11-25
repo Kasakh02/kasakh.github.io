@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Kasakh's Click Game</title>
+		<link rel="stylesheet" href="../CSS/game.css">
+		<link rel="icon" href="../Img/K.ico" type="image/x-icon">
+	</head>
+	<body>
+		<div class="container">
+			<h1>My Portfolio</h1>
+			<p>Coming soon...</p>
+			<h2>Contact Me</h2>
+			<button class="contact-button" onclick="window.location.href='mailto:henriquecvcmoraes@gmail.com'">Email</button>
+			<button class="contact-button" onclick="window.location.href='https://www.instagram.com/hmoraes_projects'">Instagram</button>
+			<div id="game-container">
+				<p id="score-display" style="display: none;">Your score: 0</p>
+				<div class="game-controls">
+					<select id="game-duration">
+						<option value="10">10s</option>
+						<option value="30">30s</option>
+						<option value="60">1min</option>
+						<option value="300">5mins</option>
+					</select>
+					<button id="start-button" onclick="startGame()">Start Game</button>
+				</div>
+				<div id="game" onclick="createRipple(event)">
+					<p id="click-here">Click Here!</p>
+				</div>
+				<p id="countdown"></p>
+			</div>
+		</div>
+		<div id="end-game-layer">
+			<div id="popup">
+					<p id="end-game-message"></p>
+					<button id="close-button" onclick="resetGame()">X</button>
+			</div>
+		</div>
+		<script src="JS/game.js"></script>
+	</body>
+</html>

@@ -1,0 +1,101 @@
+.container {
+	width: 80%;
+	margin: auto;
+	text-align: center;
+}
+
+.contact-button {
+	margin: 10px;
+	padding: 10px;
+}
+
+#game-container {
+	margin-top: 50px;
+}
+
+#game {
+	width: 300px;
+	height: 300px;
+	margin: auto;
+	border: 1px solid black;
+	display: none;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	cursor: pointer;
+}
+
+#game * {
+  user-select: none;
+}
+
+.ripple {
+	position: absolute;
+	border-radius: 50%;
+	background-color: rgba(0, 0, 0, 0.1);
+	animation: ripple-animation 1s linear;
+}
+
+@keyframes ripple-animation {
+	from {
+			transform: scale(0);
+			opacity: 1;
+	}
+	to {
+			transform: scale(2);
+			opacity: 0;
+	}
+}
+
+#end-game-layer {
+	display: none;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 9999;
+}
+
+#popup {
+	position: relative;
+	width: 80%;
+	max-width: 500px;
+	margin: 10% auto;
+	padding: 20px;
+	background-color: white;
+	border-radius: 10px;
+}
+
+#close-button {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	background-color: red;
+	color: white;
+	border: none;
+	border-radius: 50%;
+	width: 20px;
+	height: 20px;
+	font-size: 15px;
+	line-height: 20px;
+	text-align: center;
+	cursor: pointer;
+}
+
+#end-game-message {
+	background-color: #fefefe;
+	margin: auto;
+	border: 1px solid #888;
+	width: 80%;
+	height: 100%;
+	text-align: center;
+}
+
+.game-controls {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
