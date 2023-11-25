@@ -69,3 +69,14 @@ function createClickEffect(event) {
 	document.body.appendChild(effect);
 	setTimeout(() => document.body.removeChild(effect), 500);
 }
+
+function createRipple(event) {
+	var ripple = document.createElement('div');
+	ripple.className = 'ripple';
+	ripple.style.left = event.clientX - event.target.offsetLeft + 'px';
+	ripple.style.top = event.clientY - event.target.offsetTop + 'px';
+	document.getElementById('game').appendChild(ripple);
+	setTimeout(function() {
+			ripple.remove();
+	}, 1000);
+}
