@@ -1,3 +1,10 @@
+body {
+	background-image: url('../Img/background.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: cover;
+}
+
 .container {
 	text-align: center;
 	display: flex;
