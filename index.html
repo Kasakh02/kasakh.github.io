@@ -13,9 +13,11 @@
 		</div>
 		<h2>Site building started</h2>
 		<div class="progress-bar">
-			<div class="filler"></div>
-			<span>Loading...</span>
-		</div>
+			<div class="filler">
+				<span class="loading-text">Loading...</span>
+			</div>
+			<span class="loading-text masked">Loading...</span>
+		</div>	
 		<button class="game-button" onclick="window.location.href='clickGame.html'">Click Speed Test</button>
 		<div class="social-links">
 			<a href="https://www.linkedin.com/in/henrique-villa-moraes">
@@ -32,20 +34,6 @@
 			</a>
 		</div>
 	</div>
-	<script>
-		window.onload = function() {
-			var elem = document.getElementsByClassName("filler")[0];   
-			var width = 1;
-			var id = setInterval(frame, 10);
-			function frame() {
-				if (width >= 10) {
-					clearInterval(id);
-				} else {
-					width++; 
-					elem.style.width = width + '%'; 
-				}
-			}
-		}
-		</script>		
+	<script src="../JS/index.js"></script>
 </body>
 </html>

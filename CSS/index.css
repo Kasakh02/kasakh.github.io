@@ -48,18 +48,27 @@ h2 {
 }
 
 .filler {
+	position: relative;
 	height: 100%;
 	width: 10%;
 	background-color: #4caf50;
 	border-radius: 10px;
 }
 
-.progress-bar span {
+.loading-text {
 	position: absolute;
 	width: 100%;
 	text-align: center;
 	font-weight: bold;
+}
+
+.loading-text.masked {
 	color: #90ee90;
+}
+
+.filler .loading-text {
+	color: #4caf50;
+	overflow: hidden;
 }
 
 .game-button {
