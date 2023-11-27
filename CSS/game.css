@@ -97,6 +97,19 @@ body {
 	gap: 10px;
 }
 
+#main-page {
+	display: flex;
+	border-radius: 10px;
+	height: 20px;
+	width: 10%; /* Adjust this value to make the button smaller */
+	margin: 20px auto; /* Center the button */
+	padding: 10px 20px;
+	background-color: #008CBA;
+	color: white;
+	border: none;
+	cursor: pointer;
+}
+
 .ripple {
 	position: absolute;
 	border-radius: 50%;
