@@ -16,13 +16,13 @@ body {
 
 .construction {
 	position: relative;
-	top: -50px; /* Adjust this value to move the text up */
+	top: -70px; /* Move the text */
 }
 
 .construction h1 {
 	font-size: 5em;
 	font-family: sans-serif;
-  line-height: 0.5; /* Adjust this value to bring the lines closer */
+  line-height: 0.5; /* Proximity of lines (h1) */
 	color: white;
 }
 
@@ -39,8 +39,10 @@ h2 {
 	border-radius: 13px;
 	padding: 3px;
 	margin: 20px auto;
+	margin-top: 50px;
 	align-items: center;
 	height: 20px;
+	position: relative;
 }
 
 .filler {
@@ -63,8 +65,8 @@ h2 {
 	justify-content: center;
 	align-items: center;
 	border-radius: 10px;
-	width: 15%; /* Adjust this value to make the button smaller */
-	margin: 20px auto; /* Center the button */
+	width: 15%;
+	margin: 20px auto;
 	padding: 10px 20px;
 	background-color: #008CBA;
 	color: white;
