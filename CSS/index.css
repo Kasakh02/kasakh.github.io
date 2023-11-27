@@ -46,18 +46,19 @@ h2 {
 	align-items: center;
 }
 
-.loading-text {
-	position: absolute;
-	width: 100%;
-	text-align: center;
-}
-
 .filler {
 	position: absolute;
 	height: 100%;
 	width: 10%;
 	background-color: #4caf50;
 	border-radius: 10px;
+}
+
+.loading-text {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	color: #ff6347;
 }
 
 .game-button {
