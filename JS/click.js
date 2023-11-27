@@ -7,13 +7,12 @@ let gameStarted = false;
 function startGame() {
 	document.getElementById('start-button').style.display = 'none';
 	document.getElementById('game-duration').style.display = 'none';
-	document.getElementById('score-display').style.display = 'none';
+	document.getElementById('score-display').style.display = 'block';
 	const game = document.getElementById('game');
 	game.style.display = 'flex';
 	document.getElementById('countdown').innerText = gameDuration + '.000';
 	game.onclick = function(event) {
 		if (!gameStarted) {
-			document.getElementById('score-display').style.display = 'block';
 			gameStarted = true;
 			document.getElementById('countdown').innerText = gameDuration + '.000';
 			countdownInterval = setInterval(countdown, 10);
