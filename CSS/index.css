@@ -7,9 +7,15 @@
 	font-family: Arial, sans-serif;
 }
 
+.construction {
+    position: relative;
+    top: -20px; /* Adjust this value to move the text up */
+}
+
 .construction h1 {
 	font-size: 5em;
 	font-family: sans-serif;
+    line-height: 0.8; /* Adjust this value to bring the lines closer */
 }
 
 h2 {
@@ -25,20 +31,21 @@ h2 {
 	padding: 3px;
 	margin: 20px auto;
 	align-items: center;
+    height: 10px; /* Adjust this value to make the bar thinner */
 }
 
 .filler {
-	height: 20px;
+	height: 100%;
 	width: 70%;
 	background-color: #4caf50;
 	border-radius: 10px;
 	transition: width 2s;
-	display: flex;
-	align-items: center;
-	justify-content: center;
 }
 
 .progress-bar span {
+    position: absolute;
+    width: 100%;
+    text-align: center;
 	color: white;
 	font-weight: bold;
 }
@@ -49,8 +56,8 @@ h2 {
 	display: flex;
 	border-radius: 10px;
 	height: 20px;
-	width: 100px;
-	margin: 20px 0;
+	width: 33%; /* Adjust this value to make the button smaller */
+	margin: 20px auto; /* Center the button */
 	padding: 10px 20px;
 	background-color: #008CBA;
 	color: white;
