@@ -21,7 +21,7 @@ function startGame() {
 		}
 		incrementCounter();
 	};
-	document.getElementById('score-display').innerText = 'Your score: 0';
+	//document.getElementById('score-display').innerText = 'Your score: 0';
 }
 
 function countdown() {
