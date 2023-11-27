@@ -53,7 +53,6 @@ h2 {
 	position: absolute;
 	width: 100%;
 	text-align: center;
-	color: white;
 	font-weight: bold;
 }
 
@@ -76,7 +75,6 @@ h2 {
 	bottom: 0;
 	width: 100%;
 	padding: 20px 0;
-	background-color: #f3f3f3;
 }
 
 .social-links a {
