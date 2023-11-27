@@ -40,6 +40,7 @@ h2 {
 	padding: 3px;
 	margin: 20px auto;
 	margin-top: 50px;
+	align-items: center;
 	height: 20px;
 	position: relative;
 	display: flex;
@@ -47,7 +48,7 @@ h2 {
 }
 
 .filler {
-	position: absolute;
+	position: relative;
 	height: 100%;
 	width: 10%;
 	background-color: #4caf50;
@@ -58,7 +59,15 @@ h2 {
 	position: absolute;
 	width: 100%;
 	text-align: center;
-	color: #ff6347;
+	font-weight: bold;
+}
+
+.progress-bar span {
+	position: absolute;
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	color: #90ee90;
 }
 
 .game-button {
