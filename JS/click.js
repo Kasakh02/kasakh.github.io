@@ -71,3 +71,9 @@ function createRipple(event) {
     ripple.remove();
   }, 1000);
 }
+
+document.addEventListener('keydown', function(event) {
+	if (event.key === 'Escape') {
+		resetGame();
+	}
+});
