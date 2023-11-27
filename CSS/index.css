@@ -53,6 +53,9 @@ h2 {
 	width: 10%;
 	background-color: #4caf50;
 	border-radius: 10px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .game-button {
