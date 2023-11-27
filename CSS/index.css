@@ -48,11 +48,16 @@ h2 {
 }
 
 .filler {
-	position: relative;
+	position: absolute;
 	height: 100%;
 	width: 10%;
 	background-color: #4caf50;
 	border-radius: 10px;
+}
+
+.loading-text {
+	position: absolute;
+	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
