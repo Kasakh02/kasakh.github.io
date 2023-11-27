@@ -43,8 +43,13 @@ h2 {
 	height: 20px;
 	position: relative;
 	display: flex;
-	justify-content: center;
 	align-items: center;
+}
+
+.loading-text {
+	position: absolute;
+	width: 100%;
+	text-align: center;
 }
 
 .filler {
@@ -53,14 +58,6 @@ h2 {
 	width: 10%;
 	background-color: #4caf50;
 	border-radius: 10px;
-}
-
-.loading-text {
-	position: absolute;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 
 .game-button {
