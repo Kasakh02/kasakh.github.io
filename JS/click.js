@@ -1,7 +1,7 @@
 let gameInterval;
 let clickCounter = 0;
 let countdownInterval;
-let gameDuration;
+let gameDuration = 0;
 let gameStarted = false;
 
 function startGame() {
