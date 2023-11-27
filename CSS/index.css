@@ -55,22 +55,6 @@ h2 {
 	border-radius: 10px;
 }
 
-.loading-text {
-	position: absolute;
-	width: 100%;
-	text-align: center;
-	font-weight: bold;
-}
-
-.loading-text.masked {
-	color: #90ee90;
-}
-
-.filler .loading-text {
-	color: #4caf50;
-	overflow: hidden;
-}
-
 .game-button {
 	display: flex;
 	justify-content: center;
