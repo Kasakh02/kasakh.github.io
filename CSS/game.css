@@ -111,8 +111,7 @@ body {
 	width: 10%; /* Adjust this value to make the button smaller */
 	margin: 20px auto; /* Center the button */
 	padding: 10px 20px;
-	background-color: #008CBA;
-	color: white;
+	color: #008CBA;
 	border: none;
 	cursor: pointer;
 	height: 30px;
