@@ -31,7 +31,6 @@ h2 {
 	padding: 3px;
 	margin: 20px auto;
 	align-items: center;
-    height: 10px; /* Adjust this value to make the bar thinner */
 }
 
 .filler {
@@ -51,12 +50,10 @@ h2 {
 }
 
 .game-button {
-	text-align: center;
-	align-items: center;
 	display: flex;
 	border-radius: 10px;
 	height: 20px;
-	width: 33%; /* Adjust this value to make the button smaller */
+	width: 10%; /* Adjust this value to make the button smaller */
 	margin: 20px auto; /* Center the button */
 	padding: 10px 20px;
 	background-color: #008CBA;
