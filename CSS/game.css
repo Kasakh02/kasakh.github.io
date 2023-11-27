@@ -108,7 +108,6 @@ body {
 	justify-content: center;
 	align-items: center;
 	border-radius: 10px;
-	height: 20px;
 	width: 10%; /* Adjust this value to make the button smaller */
 	margin: 20px auto; /* Center the button */
 	padding: 10px 20px;
@@ -116,8 +115,6 @@ body {
 	color: white;
 	border: none;
 	cursor: pointer;
-	margin-bottom: 20px;
-	bottom: 0;
 }
 
 .ripple {
