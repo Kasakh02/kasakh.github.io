@@ -60,7 +60,7 @@ body {
 	width: 80%;
 	max-width: 500px;
 	margin: 10% auto;
-	padding: 20px;
+	padding: 20px grey;
 	background-color: white;
 	border-radius: 10px;
 }
@@ -107,8 +107,8 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 10%; /* Adjust this value to make the button smaller */
-	margin: 20px auto; /* Center the button */
+	width: 10%;
+	margin: 20px auto;
 	padding: 10px 20px;
 	color: #008CBA;
 	cursor: pointer;
