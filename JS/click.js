@@ -19,10 +19,8 @@ function startGame() {
 			gameInterval = setTimeout(endGame, gameDuration * 1000);
 		}
 		incrementCounter();
-		createClickEffect(event);
 	};
 	document.getElementById('score-display').innerText = 'Your score: 0';
-	document.getElementById('game').addEventListener('click', createRipple);
 }
 
 function countdown() {
@@ -55,7 +53,6 @@ function resetGame() {
 	document.getElementById('score-display').style.display = 'none';
 	document.getElementById('click-here').innerText = 'Click Here!';
 	document.getElementById('countdown').innerText = '';
-	document.getElementById('game').removeEventListener('click', createRipple);
 }
 
 function incrementCounter() {
