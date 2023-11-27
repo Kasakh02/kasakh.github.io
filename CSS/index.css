@@ -52,10 +52,9 @@ h2 {
 
 .game-button {
 	display: flex;
-  justify-content: center;
-  align-items: center;
+	justify-content: center;
+	align-items: center;
 	border-radius: 10px;
-	height: 20px;
 	width: 10%; /* Adjust this value to make the button smaller */
 	margin: 20px auto; /* Center the button */
 	padding: 10px 20px;
