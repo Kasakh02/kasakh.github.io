@@ -43,6 +43,9 @@ h2 {
 	align-items: center;
 	height: 20px;
 	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .filler {
