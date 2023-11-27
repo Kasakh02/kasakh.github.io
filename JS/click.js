@@ -59,3 +59,15 @@ function incrementCounter() {
 	clickCounter++;
 	document.getElementById('score-display').innerText = 'Your score: ' + clickCounter;
 }
+
+function createRipple(event) {
+  const game = document.getElementById('game');
+  const ripple = document.createElement('span');
+  ripple.classList.add('ripple');
+  ripple.style.left = event.clientX - game.offsetLeft + 'px';
+  ripple.style.top = event.clientY - game.offsetTop + 'px';
+  game.appendChild(ripple);
+  setTimeout(() => {
+    ripple.remove();
+  }, 1000);
+}
