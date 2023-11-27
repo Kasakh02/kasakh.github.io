@@ -115,6 +115,7 @@ body {
 	color: white;
 	border: none;
 	cursor: pointer;
+	height: 100vh;
 }
 
 .ripple {
