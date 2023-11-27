@@ -29,7 +29,6 @@ body {
 h2 {
 	font-size: 2em;
 	margin-bottom: 20px;
-	margin-top: -50px;
 	font-family: sans-serif;
 	color: white;
 }
@@ -40,7 +39,7 @@ h2 {
 	border-radius: 13px;
 	padding: 3px;
 	margin: 20px auto;
-	margin-top: -50px;
+	margin-top: 50px;
 	align-items: center;
 	height: 20px;
 	position: relative;
