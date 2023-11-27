@@ -7,8 +7,9 @@ body {
 }
 
 #description {
-	width: 100px;
+	width: 200px;
 	height: auto;
+	margin: auto;
 }
 
 .container {
@@ -31,7 +32,7 @@ body {
 	align-items: center;
 	display: flex;
 	cursor: pointer;
-	padding-top: 50px;
+	margin-top: 50px;
 }
 
 #game * {
