@@ -37,13 +37,16 @@ h2 {
 	justify-content: center;
 }
 
-.filler span {
+.progress-bar span {
 	color: white;
 	font-weight: bold;
 }
 
 .game-button {
-	display: inline-block;
+	text-align: center;
+	display: flex;
+	height: 20px;
+	width: 100px;
 	margin: 20px 0;
 	padding: 10px 20px;
 	background-color: #008CBA;
