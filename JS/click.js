@@ -1,7 +1,7 @@
 let gameInterval;
 let clickCounter = 0;
 let countdownInterval;
-let gameDuration = 0;
+let gameDuration = document.getElementById('game-duration').value;
 let gameStarted = false;
 
 function startGame() {
@@ -13,9 +13,8 @@ function startGame() {
 	document.getElementById('countdown').innerText = gameDuration + '.000';
 	game.onclick = function(event) {
 		if (!gameStarted) {
-			document.getElementById('score-display').style.display = 'none';
+			document.getElementById('score-display').style.display = 'block';
 			gameStarted = true;
-			gameDuration = document.getElementById('game-duration').value;
 			document.getElementById('countdown').innerText = gameDuration + '.000';
 			countdownInterval = setInterval(countdown, 10);
 			gameInterval = setTimeout(endGame, gameDuration * 1000);
