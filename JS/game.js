@@ -62,23 +62,3 @@ function incrementCounter() {
 	clickCounter++;
 	document.getElementById('score-display').innerText = 'Your score: ' + clickCounter;
 }
-
-function createClickEffect(event) {
-	const effect = document.createElement('div');
-	effect.className = 'click-effect';
-	effect.style.top = `${event.clientY}px`;
-	effect.style.left = `${event.clientX}px`;
-	document.body.appendChild(effect);
-	setTimeout(() => document.body.removeChild(effect), 500);
-}
-
-function createRipple(event) {
-	var ripple = document.createElement('div');
-	ripple.className = 'ripple';
-	ripple.style.left = event.clientX - event.target.offsetLeft + 'px';
-	ripple.style.top = event.clientY - event.target.offsetTop + 'px';
-	document.getElementById('game').appendChild(ripple);
-	setTimeout(function() {
-			ripple.remove();
-	}, 1000);
-}

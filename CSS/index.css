@@ -52,7 +52,6 @@ h2 {
 	width: 10%;
 	background-color: #4caf50;
 	border-radius: 10px;
-	transition: width 2s;
 }
 
 .progress-bar span {
@@ -60,6 +59,7 @@ h2 {
 	width: 100%;
 	text-align: center;
 	font-weight: bold;
+	color: #90ee90;
 }
 
 .game-button {

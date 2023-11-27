@@ -115,21 +115,3 @@ body {
 	height: 30px;
 	user-select: none;
 }
-
-.ripple {
-	position: absolute;
-	border-radius: 50%;
-	background-color: rgba(0, 0, 0, 0.1);
-	animation: ripple-animation 1s linear;
-}
-
-@keyframes ripple-animation {
-	from {
-			transform: scale(0);
-			opacity: 1;
-	}
-	to {
-			transform: scale(2);
-			opacity: 0;
-	}
-}
