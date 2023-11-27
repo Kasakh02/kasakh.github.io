@@ -6,7 +6,7 @@ let gameStarted = false;
 
 function startGame() {
 	document.getElementById('start-button').style.display = 'none';
-	document.getElementById('game-duration').style.display = 'none';
+	document.getElementById('game-duration').style.display = 'block';
 	document.getElementById('score-display').style.display = 'block';
 	const game = document.getElementById('game');
 	game.style.display = 'flex';

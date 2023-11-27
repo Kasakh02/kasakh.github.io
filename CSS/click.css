@@ -89,6 +89,9 @@ body {
 #score-display {
 	user-select: none;
 	display: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 #main-page {
