@@ -23,14 +23,14 @@ body {
 	font-size: 5em;
 	font-family: sans-serif;
   line-height: 0.5; /* Adjust this value to bring the lines closer */
-	color: black;
+	color: white;
 }
 
 h2 {
 	font-size: 2em;
 	margin-bottom: 20px;
 	font-family: sans-serif;
-	color: black;
+	color: white;
 }
 
 .progress-bar {
