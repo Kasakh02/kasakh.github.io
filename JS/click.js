@@ -6,10 +6,11 @@ let gameStarted = false;
 
 function startGame() {
 	document.getElementById('start-button').style.display = 'none';
-	document.getElementById('game-duration').style.display = 'block';
+	document.getElementById('game-duration').style.display = 'none';
 	document.getElementById('score-display').style.display = 'block';
 	const game = document.getElementById('game');
 	game.style.display = 'flex';
+	document.getElementById('countdown').innerText = gameDuration + '.000';
 	game.onclick = function(event) {
 		if (!gameStarted) {
 			gameStarted = true;
