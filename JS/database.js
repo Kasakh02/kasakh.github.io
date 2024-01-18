@@ -22,7 +22,7 @@ function displayDaysTable(days) {
 		table += '</tr>';
 	}
 	table += '</tbody>';
-	$('#daysTable').html('<table border="1">' + table + '</table>');
+	$('#daysTable').html(table);
 }
 
 // Function to load studies for a specific day
@@ -52,7 +52,7 @@ function displayStudiesTable(studies) {
 		table += '</tr>';
 	}
 	table += '</tbody>';
-	$('#studiesContainer').html('<table border="1">' + table + '</table>');
+	$('#studiesContainer').html(table);
 }
 
 // Call loadDays function on page load
