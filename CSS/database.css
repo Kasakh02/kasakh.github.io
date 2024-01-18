@@ -9,33 +9,17 @@ button {
 
 table {
 	margin-bottom: 20px;
-	border-collapse: collapse;
-	width: 100%;
 }
 
 /* Specific styles for classes */
-.duration,
-.times,
-.notes {
-	text-align: left;
+.duration {
+	width: 130px;
 }
 
-.duration,
 .times {
-	width: 30%;  /* Adjust the width as needed */
+	width: 80px;
 }
 
 .notes {
-	width: 40%;  /* Adjust the width as needed */
-}
-
-/* Add the following style for better readability */
-th, td {
-	border: 1px solid #ddd;
-	padding: 8px;
-}
-
-/* Add the following style to highlight header cells */
-th {
-	background-color: #f2f2f2;
+	width: 300px;
 }

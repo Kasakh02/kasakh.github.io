@@ -52,7 +52,7 @@ function displayStudiesTable(studies) {
 		table += '</tr>';
 	}
 	table += '</tbody>';
-	$('#studiesContainer').html(table);
+	$('#studiesContainer').html('<table border="1">' + table + '</table>');
 }
 
 // Call loadDays function on page load
