@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Kasakh's Click Test</title>
-    <link rel="stylesheet" href="../CSS/click.css">
-    <link rel="icon" href="../Img/K.ico" type="image/x-icon">
+    <title>Kasakh's DataBase</title>
+    <link rel="icon" href="Img/K.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -14,7 +13,8 @@
 				<th>Date</th>
 				<th>Total Time</th>
 			</tr>
-		</thead>
+		</thead>netstat -ano | find "5173"
+
 		<tbody>
 			<!-- Days table will be displayed here -->
 		</tbody>
@@ -29,7 +29,7 @@
 		// Function to load days table
 		function loadDays() {
 			$.ajax({
-				url: '/api/GetAllDays',
+				url: 'https://localhost:7180/api/GetAllDays',
 				type: 'GET',
 				success: function (days) {
 					displayDaysTable(days);
@@ -57,7 +57,7 @@
 		// Function to load studies for a specific day
 		function loadStudies(selectedDayId) {
 			$.ajax({
-				url: '/api/GetStudiesForDay?selectedDayId=' + selectedDayId,
+				url: 'https://localhost:7180/api/GetStudiesForDay?selectedDayId=' + selectedDayId,
 				type: 'GET',
 				success: function (studies) {
 					displayStudiesTable(studies);
