@@ -24,12 +24,23 @@ table {
 	width: 300px;
 }
 
-.flex-container {
+/* Add the following CSS for table and button alignment */
+.table-container {
 	display: flex;
-	flex-direction: row-reverse;
+	justify-content: space-between;
+	align-items: center;
+	margin: 20px;
 }
 
 .button-container {
-	margin-top: 20px;
-	margin-right: 20px;
+	display: flex;
+	align-items: center;
+}
+
+#daysTable {
+	margin-bottom: 0;  /* Adjust the margin as needed */
+}
+
+.button-container button {
+	margin-left: 10px;  /* Adjust the margin as needed */
 }

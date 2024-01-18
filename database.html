@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <div class="flex-container">
+    <div class="table-container">
         <table id="daysTable" border="1">
             <thead>
                 <tr>
@@ -21,19 +21,19 @@
             </tbody>
         </table>
 
-        <div id="studiesContainer">
-            <!-- Studies table will be displayed here when a day is clicked -->
+        <div class="button-container">
+            <button id="startStopButton" onclick="toggleStudy()">
+                Start Study
+            </button>
+
+            <div id="stopwatchContainer" style="display: none;">
+                <p id="stopwatch">00:00:00</p>
+            </div>
         </div>
     </div>
 
-    <div class="button-container">
-        <button id="startStopButton" onclick="toggleStudy()">
-            Start Study
-        </button>
-
-        <div id="stopwatchContainer" style="display: none;">
-            <p id="stopwatch">00:00:00</p>
-        </div>
+    <div id="studiesContainer">
+        <!-- Studies table will be displayed here when a day is clicked -->
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
