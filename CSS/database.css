@@ -39,12 +39,13 @@ table {
 .button-container {
 	display: flex;
 	align-items: center;
+	margin-left: 10px;  /* Adjust the margin as needed */
 }
 
 #daysTable {
 	margin-bottom: 0;  /* Adjust the margin as needed */
 }
 
-.button-container button {
-	margin-left: 10px;  /* Adjust the margin as needed */
+#studiesContainer {
+	margin-left: 20px;  /* Adjust the margin as needed */
 }
