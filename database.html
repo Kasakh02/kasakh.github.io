@@ -4,92 +4,26 @@
     <title>Kasakh's DataBase</title>
     <link rel="icon" href="Img/K.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="CSS/database.css">
 </head>
 <body>
-	<table id="daysTable" border="1">
+	<table id="daysTable">
 		<thead>
 			<tr>
-				<th>ID</th>
-				<th>Date</th>
-				<th>Total Time</th>
+				<th class="duration">Date</th>
+				<th class="duration">Total Time</th>
 			</tr>
-		</thead>netstat -ano | find "5173"
-
+		</thead>
 		<tbody>
 			<!-- Days table will be displayed here -->
 		</tbody>
 	</table>
-
+	
 	<div id="studiesContainer">
 		<!-- Studies table will be displayed here when a day is clicked -->
 	</div>
 
 	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-	<script>
-		// Function to load days table
-		function loadDays() {
-			$.ajax({
-				url: 'https://localhost:7180/api/GetAllDays',
-				type: 'GET',
-				success: function (days) {
-					displayDaysTable(days);
-				},
-				error: function () {
-					console.error('Error loading days.');
-				}
-			});
-		}
-
-		// Function to display days table
-		function displayDaysTable(days) {
-			var table = '<thead><tr><th>ID</th><th>Date</th><th>Total Time</th></tr></thead><tbody>';
-			for (var i = 0; i < days.length; i++) {
-				table += '<tr onclick="loadStudies(' + days[i].id + ')">';
-				table += '<td>' + days[i].id + '</td>';
-				table += '<td>' + days[i].date + '</td>';
-				table += '<td>' + days[i].totalTime + '</td>';
-				table += '</tr>';
-			}
-			table += '</tbody>';
-			$('#daysTable').html(table);
-		}
-
-		// Function to load studies for a specific day
-		function loadStudies(selectedDayId) {
-			$.ajax({
-				url: 'https://localhost:7180/api/GetStudiesForDay?selectedDayId=' + selectedDayId,
-				type: 'GET',
-				success: function (studies) {
-					displayStudiesTable(studies);
-				},
-				error: function () {
-					console.error('Error loading studies.');
-				}
-			});
-		}
-
-		// Function to display studies table
-		function displayStudiesTable(studies) {
-			var table = '<thead><tr><th>ID</th><th>Total Time</th><th>Start Time</th><th>End Time</th><th>Summary</th><th>Notes</th><th>Days ID</th></tr></thead><tbody>';
-			for (var i = 0; i < studies.length; i++) {
-				table += '<tr>';
-				table += '<td>' + studies[i].id + '</td>';
-				table += '<td>' + studies[i].totalTime + '</td>';
-				table += '<td>' + studies[i].startTime + '</td>';
-				table += '<td>' + studies[i].endTime + '</td>';
-				table += '<td>' + studies[i].summary + '</td>';
-				table += '<td>' + studies[i].notes + '</td>';
-				table += '<td>' + studies[i].daysId + '</td>';
-				table += '</tr>';
-			}
-			table += '</tbody>';
-			$('#studiesContainer').html(table);
-		}
-
-		// Call loadDays function on page load
-		$(document).ready(function () {
-			loadDays();
-		});
-	</script>
+	<script src="script.js"></script>
 </body>
 </html>

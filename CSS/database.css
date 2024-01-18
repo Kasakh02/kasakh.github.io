@@ -1,0 +1,25 @@
+/* Styles for spacing */
+body {
+	margin: 20px;
+}
+
+button {
+	margin-bottom: 10px;
+}
+
+table {
+	margin-bottom: 20px;
+}
+
+/* Specific styles for classes */
+.duration {
+	width: 130px;
+}
+
+.times {
+	width: 80px;
+}
+
+.notes {
+	width: 300px;
+}
