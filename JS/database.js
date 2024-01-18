@@ -14,7 +14,7 @@ function loadDays() {
 
 // Function to display days table
 function displayDaysTable(days) {
-	var table = '<thead><tr>><th class="duration">Date</th><th class="duration">Total Time</th></tr></thead><tbody>';
+	var table = '<thead><tr><th class="duration">Date</th><th class="duration">Total Time</th></tr></thead><tbody>';
 	for (var i = 0; i < days.length; i++) {
 		table += '<tr onclick="loadStudies(' + days[i].id + ')">';
 		table += '<td>' + days[i].date + '</td>';
