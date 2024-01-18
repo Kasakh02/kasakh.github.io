@@ -24,6 +24,10 @@ table {
 	width: 300px;
 }
 
+.eff {
+	width: 30px;
+}
+
 /* Add the following CSS for table and button alignment */
 .table-container {
 	display: flex;

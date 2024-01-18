@@ -14,11 +14,13 @@ function loadDays() {
 
 // Function to display days table
 function displayDaysTable(days) {
-	var table = '<thead><tr><th class="duration">Date</th><th class="duration">Total Time</th></tr></thead><tbody>';
+	var table = '<thead><tr><th class="duration">Date</th><th class="duration">Total Time</th><th class="duration">Pause Time</th><th class="eff">Efficiency</th></tr></thead><tbody>';
 	for (var i = 0; i < days.length; i++) {
 		table += '<tr onclick="loadStudies(' + days[i].id + ')">';
 		table += '<td>' + days[i].date + '</td>';
 		table += '<td>' + days[i].totalTime + '</td>';
+		table += '<td>' + days[i].pauseTime + '</td>';
+		table += '<td>' + days[i].efficiency + '</td>';
 		table += '</tr>';
 	}
 	table += '</tbody>';
@@ -41,10 +43,12 @@ function loadStudies(selectedDayId) {
 
 // Function to display studies table
 function displayStudiesTable(studies) {
-	var table = '<thead><tr><th class="duration">Total Time</th><th class="times">Start Time</th><th class="times">End Time</th><th class="notes">Summary</th><th class="notes">Notes</th></tr></thead><tbody>';
+	var table = '<thead><tr><th class="duration">Total Time</th><th class="duration">Pause Time</th><th class="eff">Efficiency</th><th class="times">Start Time</th><th class="times">End Time</th><th class="notes">Summary</th><th class="notes">Notes</th></tr></thead><tbody>';
 	for (var i = 0; i < studies.length; i++) {
 		table += '<tr>';
 		table += '<td>' + studies[i].totalTime + '</td>';
+		table += '<td>' + studies[i].pauseTime + '</td>';
+		table += '<td>' + studies[i].efficiency + '</td>';
 		table += '<td>' + studies[i].startTime + '</td>';
 		table += '<td>' + studies[i].endTime + '</td>';
 		table += '<td>' + studies[i].summary + '</td>';
