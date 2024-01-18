@@ -8,28 +8,32 @@
 </head>
 
 <body>
-    <table id="daysTable" border="1">
-        <thead>
-            <tr>
-                <th class="duration">Date</th>
-                <th class="duration">Total Time</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Days table will be displayed here -->
-        </tbody>
-    </table>
+    <div class="flex-container">
+        <table id="daysTable" border="1">
+            <thead>
+                <tr>
+                    <th class="duration">Date</th>
+                    <th class="duration">Total Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Days table will be displayed here -->
+            </tbody>
+        </table>
 
-    <div id="studiesContainer">
-        <!-- Studies table will be displayed here when a day is clicked -->
+        <div id="studiesContainer">
+            <!-- Studies table will be displayed here when a day is clicked -->
+        </div>
     </div>
 
-    <button id="startStopButton" onclick="toggleStudy()">
-        Start Study
-    </button>
+    <div class="button-container">
+        <button id="startStopButton" onclick="toggleStudy()">
+            Start Study
+        </button>
 
-    <div id="stopwatchContainer" style="display: none;">
-        <p id="stopwatch">00:00:00</p>
+        <div id="stopwatchContainer" style="display: none;">
+            <p id="stopwatch">00:00:00</p>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

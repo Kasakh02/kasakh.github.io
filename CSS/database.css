@@ -23,3 +23,13 @@ table {
 .notes {
 	width: 300px;
 }
+
+.flex-container {
+	display: flex;
+	flex-direction: row-reverse;
+}
+
+.button-container {
+	margin-top: 20px;
+	margin-right: 20px;
+}
