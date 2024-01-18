@@ -59,3 +59,64 @@ function displayStudiesTable(studies) {
 $(document).ready(function () {
 	loadDays();
 });
+
+// Define variables for stopwatch
+let stopwatchInterval;
+let startTime;
+
+// Function to toggle study (start/stop)
+function toggleStudy() {
+    const startStopButton = $('#startStopButton');
+    const stopwatchContainer = $('#stopwatchContainer');
+
+    if (startStopButton.text() === 'Start Study') {
+        // Start Study
+        startStopButton.text('Stop Study');
+        startTime = new Date();
+        stopwatchInterval = setInterval(updateStopwatch, 1000);
+        stopwatchContainer.show();
+    } else {
+        // Stop Study
+        clearInterval(stopwatchInterval);
+        displayStudyInfo();
+        startStopButton.text('Start Study');
+        stopwatchContainer.hide();
+    }
+}
+
+// Function to update the stopwatch
+function updateStopwatch() {
+    const currentTime = new Date();
+    const elapsedTime = new Date(currentTime - startTime);
+    const formattedTime = formatTime(elapsedTime);
+    $('#stopwatch').text(formattedTime);
+}
+
+// Function to format time (HH:MM:SS)
+function formatTime(time) {
+    const hours = time.getUTCHours();
+    const minutes = time.getUTCMinutes();
+    const seconds = time.getUTCSeconds();
+    return (
+        String(hours).padStart(2, '0') +
+        ':' +
+        String(minutes).padStart(2, '0') +
+        ':' +
+        String(seconds).padStart(2, '0')
+    );
+}
+
+// Function to display study information
+function displayStudyInfo() {
+    const endTime = new Date();
+    const timePassed = formatTime(new Date(endTime - startTime));
+    const startTimeString = startTime.toLocaleTimeString();
+    const endTimeString = endTime.toLocaleTimeString();
+
+    // Display the study information below the stopwatch
+    $('#studiesContainer').append(`
+        <p>Time Passed: ${timePassed}</p>
+        <p>Start Time: ${startTimeString}</p>
+        <p>End Time: ${endTimeString}</p>
+    `);
+}

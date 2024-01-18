@@ -4,26 +4,35 @@
     <title>Kasakh's DataBase</title>
     <link rel="icon" href="Img/K.ico" type="image/x-icon">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="CSS/database.css">
+    <link rel="stylesheet" href="CSS/database.css">
 </head>
-<body>
-	<table id="daysTable" border="1">
-		<thead>
-			<tr>
-				<th class="duration">Date</th>
-				<th class="duration">Total Time</th>
-			</tr>
-		</thead>
-		<tbody>
-			<!-- Days table will be displayed here -->
-		</tbody>
-	</table>
-	
-	<div id="studiesContainer">
-		<!-- Studies table will be displayed here when a day is clicked -->
-	</div>
 
-	<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-	<script src="JS/database.js"></script>
+<body>
+    <table id="daysTable" border="1">
+        <thead>
+            <tr>
+                <th class="duration">Date</th>
+                <th class="duration">Total Time</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Days table will be displayed here -->
+        </tbody>
+    </table>
+
+    <div id="studiesContainer">
+        <!-- Studies table will be displayed here when a day is clicked -->
+    </div>
+
+    <button id="startStopButton" onclick="toggleStudy()">
+        Start Study
+    </button>
+
+    <div id="stopwatchContainer" style="display: none;">
+        <p id="stopwatch">00:00:00</p>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="JS/database.js"></script>
 </body>
 </html>
