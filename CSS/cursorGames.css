@@ -1,0 +1,32 @@
+html {
+	height: 100%;
+}
+
+body {
+	background-image: url('../Img/background.png');
+	background-repeat: no-repeat;
+	background-position: center center;
+	overflow: hidden;
+}
+
+.game-button {
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+	margin: 10px;
+}
+
+.game-button img {
+	width: 200px; /* Adjust the width to your desired size */
+	height: auto;
+	display: block;
+	border: 2px solid white; /* Add a white border around the image */
+}
+
+.button-text {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	color: white;
+	padding: 5px 10px;
+}
