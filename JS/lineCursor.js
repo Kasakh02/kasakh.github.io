@@ -42,6 +42,19 @@ window.addEventListener("mousemove", e => {
     }
 });
 
+window.addEventListener("touchmove", e => {
+	clearTimeout(inactiveTimeout); // Clear the previous timeout
+	mouseMoved = true;
+	stopAutomaticMovement();
+	updateMousePosition(e.targetTouches[0].pageX, e.targetTouches[0].pageY);
+	// Set a new timeout to enable automatic movement after 5 seconds of inactivity
+	if (!automaticMovement) {
+			inactiveTimeout = setTimeout(() => {
+					startAutomaticMovement();
+			}, params.inactiveDelay);
+	}
+});
+
 function updateMousePosition(eX, eY) {
     pointer.x = eX;
     pointer.y = eY;
