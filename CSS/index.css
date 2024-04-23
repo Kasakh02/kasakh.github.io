@@ -2,7 +2,7 @@ body {
 	background-image: url('../Img/background.png');
 	background-repeat: no-repeat;
 	background-position: center center;
-	background-size: cover;
+	overflow: hidden;
 }
 
 .container {
@@ -16,7 +16,7 @@ body {
 
 .construction {
 	position: relative;
-	top: -70px; /* Move the text */
+	top: -150px; /* Move the text */
 }
 
 .construction h1 {
@@ -96,4 +96,34 @@ h2 {
 	margin: 0 10px;
 	text-decoration: none;
 	color: #333;
+}
+
+/* For screens smaller than 600px (typical mobile phones) */
+@media screen and (max-width: 600px) {
+	.construction h1 {
+		font-size: 3em; /* Reduce font size for UNDER CONSTRUCTION */
+	}
+
+	.progress-bar {
+		width: 40%; /* Make the loading bar wider */
+	}
+
+	.game-button {
+		width: 40%; /* Make the button wider */
+	}
+}
+
+/* For screens between 600px and 1024px (tablets and small laptops) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+	.construction h1 {
+		font-size: 4em;
+	}
+
+	.progress-bar {
+		width: 30%;
+	}
+
+	.game-button {
+		width: 20%;
+	}
 }
