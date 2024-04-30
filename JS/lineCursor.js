@@ -135,3 +135,9 @@ function setupCanvas() {
 	canvas.height = window.innerHeight;
 	updateMovementInfo();
 }
+
+// Change text back to "Automatic Movement (Move Mouse to Follow)" when mouse leaves the window
+document.addEventListener('mouseleave', () => {
+	document.getElementById('movementInfo').textContent = "Automatic Movement (Move Mouse to Follow)";
+	startAutomaticMovement();
+});

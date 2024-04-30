@@ -1,5 +1,7 @@
-html {
+html, body {
 	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 body {
@@ -9,11 +11,19 @@ body {
 	overflow: hidden;
 }
 
+.container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px; /* Add some padding for spacing */
+}
+
 .game-button {
 	display: inline-block;
 	position: relative;
 	cursor: pointer;
 	margin: 10px;
+	text-align: center; /* Center the button text */
 }
 
 .game-button img {
@@ -24,9 +34,6 @@ body {
 }
 
 .button-text {
-	position: absolute;
-	bottom: 0;
-	left: 0;
 	color: white;
 	padding: 5px 10px;
 }
